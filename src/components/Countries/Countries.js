@@ -9,17 +9,8 @@ const Countries = () => {
       .then((data) => setCountries(data));
   }, []);
   return (
-    <div className="grid grid-cols-4 px-20 gap-10">
-      {countries.map((country) => (
-        <Country
-          country={country}
-          // name={country.name.common}
-          // region={country.region}
-          // area={country.area}
-          // capital={country.capital?.[0]}
-          // population={country.population}
-          // flags={country.flags.png}
-        ></Country>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-20 gap-10">
+      {countries.map((country) => (<Country country={country} key={country.cca3}></Country>
       ))}
     </div>
   );
